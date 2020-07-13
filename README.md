@@ -24,7 +24,7 @@ CS.cities(:UT, :IN)
 # => ["Almora", "Amsaur", "Araghar", "Bageshwar", "Bagoli", "Bazpur", "Belra", "Bhagwanpur", "Champawat", "Dehradun", "Dwarahat", "Gadarpur", "Garur", "Haldwani", "Haridwar", "Jaspur", "Jhabrera", "Kashipur", "Khatima", "Kichha", "Kotdwara", "Lalkua", "Mussoorie", "Nainital", "Pali", "Pantnagar", "Pauri", "Pithoragarh", "Ranikhet", "Rishikesh", "Roorkee", "Rudarpur", "Rudraprayag", "Sitarganj", "Srinagar", "Tanakpur", "Tehri", "Uttarkashi"] 
 ```
 
-### More details about this city-state gem (Original Author)
+### More details about city-state gem (Original GEM)
 https://github.com/loureirorg/city-state
 
 # Changelog

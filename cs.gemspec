@@ -3,12 +3,12 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = "CS"
-  spec.version       = "0.1.0"
+  spec.name          = "cse"
+  spec.version       = "0.0.2"
   spec.authors       = ["Gaurav Deou"]
   spec.email         = ["gauravdev720@gmail.com"]
   spec.summary       = %q{Simple list of cities and states of the world with blank states.}
-  spec.description   = %q{Useful to make forms and validations. It uses MaxMind database.}
+  spec.description   = %q{A simple gem for country, state and cities list}
   spec.homepage      = "https://github.com/garv720/cs"
   spec.license       = "MIT"
 
