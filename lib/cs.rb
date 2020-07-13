@@ -1,4 +1,3 @@
-require "city-state/version"
 require 'yaml'
 
 module CS
@@ -92,7 +91,7 @@ module CS
     File.foreach(MAXMIND_DB_FN) do |line|
       rec = line.split(",")
       next if rec[COUNTRY] != country
-      next if (self.blank?(rec[STATE]) && self.blank?(rec[STATE_LONG])) || self.blank?(rec[CITY])
+      next if (self.blank?(rec[STATE]) && self.blank?(rec[STATE_LONG])) && self.blank?(rec[CITY])
 
       # some state codes are empty: we'll use "states-replace" in these cases
       rec[STATE] = states_replace_inv[rec[STATE_LONG]] if self.blank?(rec[STATE])
@@ -104,7 +103,7 @@ module CS
       # normalize
       rec[STATE] = rec[STATE].to_sym
       rec[CITY].gsub!(/\"/, "") # sometimes names come with a "\" char
-      rec[STATE_LONG].gsub!(/\"/, "") # sometimes names come with a "\" char
+      rec[STATE_LONG].gsub!(/\"/, "") if !self.blank?(rec[STATE_LONG])# sometimes names come with a "\" char
 
       # cities list: {TX: ["Texas City", "Another", "Another 2"]}
       cities.merge!({rec[STATE] => []}) if ! states.has_key?(rec[STATE])
@@ -120,7 +119,10 @@ module CS
     # sort
     cities = Hash[cities.sort]
     states = Hash[states.sort]
-    cities.each { |k, v| cities[k].sort! }
+    cities.each do |k, v| 
+      v.reject! {|i| i.empty? }
+      cities[k].sort!
+    end
 
     # save to states.us and cities.us
     states_fn = File.join(FILES_FOLDER, "states.#{country.downcase}")
@@ -174,13 +176,14 @@ module CS
       # Process lookup table
       lookup = get_cities_lookup(country, state)
       if ! lookup.nil?
+        @cities[country][state] = [] if @cities[country][state].nil?
         lookup.each do |old_value, new_value|
           if new_value.nil? || self.blank?(new_value)
             @cities[country][state].delete(old_value)
           else
             index = @cities[country][state].index(old_value)
             if index.nil?
-              @cities[country][state][] = new_value
+              @cities[country][state] << new_value
             else
               @cities[country][state][index] = new_value
             end
@@ -250,7 +253,6 @@ module CS
   end
 
   def self.states(country)
-    # Bugfix: https://github.com/loureirorg/city-state/issues/24
     return {} if country.nil?
 
     # Set it as current_country
@@ -262,7 +264,6 @@ module CS
       states_fn = File.join(FILES_FOLDER, "states.#{country.to_s.downcase}")
       self.install(country) if ! File.exists? states_fn
       @states[country] = self.symbolize_keys(YAML::load_file(states_fn))
-
       # Process lookup table
       lookup = get_states_lookup(country)
       if ! lookup.nil?
@@ -324,7 +325,6 @@ module CS
     @countries
   end
 
-  # get is a method to simplify the use of city-state
   # get = countries, get(country) = states(country), get(country, state) = cities(state, country)
   def self.get(country = nil, state = nil)
     return self.countries if country.nil?

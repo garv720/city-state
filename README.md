@@ -1,158 +1,40 @@
-# city-state ruby gem
+# CS ruby gem
 
-**city-state** is a very simple ruby gem to get a list of states in a country. Also, you can get a list of cities in a state, and a list of all countries of the world.
+**cs** gem is simple city-state gem with some tweaks. Like for country with no states cities are available now.
 
-## Put this gem at your Gemfile:
+### Put this gem at your Gemfile:
 ```ruby
-gem 'city-state'
+gem 'cs'
 ```
 
-## List of states:
-```ruby
-CS.states(:us)
-# => {:AK=>"Alaska", :AL=>"Alabama", :AR=>"Arkansas", :AZ=>"Arizona", :CA=>"California", :CO=>"Colorado", :CT=>"Connecticut", :DC=>"District of Columbia", :DE=>"Delaware", :FL=>"Florida", :GA=>"Georgia", :HI=>"Hawaii", :IA=>"Iowa", :ID=>"Idaho", :IL=>"Illinois", :IN=>"Indiana", :KS=>"Kansas", :KY=>"Kentucky", :LA=>"Louisiana", :MA=>"Massachusetts", :MD=>"Maryland", :ME=>"Maine", :MI=>"Michigan", :MN=>"Minnesota", :MO=>"Missouri", :MS=>"Mississippi", :MT=>"Montana", :NC=>"North Carolina", :ND=>"North Dakota", :NE=>"Nebraska", :NH=>"New Hampshire", :NJ=>"New Jersey", :NM=>"New Mexico", :NV=>"Nevada", :NY=>"New York", :OH=>"Ohio", :OK=>"Oklahoma", :OR=>"Oregon", :PA=>"Pennsylvania", :RI=>"Rhode Island", :SC=>"South Carolina", :SD=>"South Dakota", :TN=>"Tennessee", :TX=>"Texas", :UT=>"Utah", :VA=>"Virginia", :VT=>"Vermont", :WA=>"Washington", :WI=>"Wisconsin", :WV=>"West Virginia", :WY=>"Wyoming"}
-```
-**PS:** *city-state is case insensitive. You can use :US, :us, :Us, "us", "US", ...*
+### Simple Usage:
 
-## List of cities:
-```ruby
-CS.cities(:ak, :us)
-# => ["Adak", "Akhiok", "Akiachak", "Akiak", "Akutan", "Alakanuk", "Ambler", "Anchor Point", "Anchorage", "Angoon", "Atqasuk", "Barrow", "Bell Island Hot Springs", "Bethel", "Big Lake", "Buckland", "Chefornak", "Chevak", "Chicken", "Chugiak", "Coffman Cove", "Cooper Landing", "Copper Center", "Cordova", "Craig", "Deltana", "Dillingham", "Douglas", "Dutch Harbor", "Eagle River", "Eielson Air Force Base", "Fairbanks", "Fairbanks North Star Borough", "Fort Greely", "Fort Richardson", "Galena", "Girdwood", "Goodnews Bay", "Haines", "Homer", "Hooper Bay", "Juneau", "Kake", "Kaktovik", "Kalskag", "Kenai", "Ketchikan", "Kiana", "King Cove", "King Salmon", "Kipnuk", "Klawock", "Kodiak", "Kongiganak", "Kotlik", "Koyuk", "Kwethluk", "Levelock", "Manokotak", "May Creek", "Mekoryuk", "Metlakatla", "Mountain Village", "Nabesna", "Naknek", "Nazan Village", "Nenana", "New Stuyahok", "Nikiski", "Ninilchik", "Noatak", "Nome", "Nondalton", "Noorvik", "North Pole", "Northway", "Old Kotzebue", "Palmer", "Pedro Bay", "Petersburg", "Pilot Station", "Point Hope", "Point Lay", "Prudhoe Bay", "Russian Mission", "Sand Point", "Scammon Bay", "Selawik", "Seward", "Shungnak", "Sitka", "Skaguay", "Soldotna", "Stebbins", "Sterling", "Sutton", "Talkeetna", "Teller", "Thorne Bay", "Togiak", "Tok", "Toksook Bay", "Tuntutuliak", "Two Rivers", "Unalakleet", "Unalaska", "Valdez", "Wainwright", "Wasilla"]
-```
-
-## All countries of the world:
 ```ruby
 CS.countries
-# => {:AD=>"Andorra", :AE=>"United Arab Emirates", :AF=>"Afghanistan", :AG=>"Antigua and Barbuda", :AI=>"Anguilla", :AL=>"Albania", :AM=>"Armenia", :AO=>"Angola", :AQ=>"Antarctica", :AR=>"Argentina", :AS=>"American Samoa", :AT=>"Austria", :AU=>"Australia", :AW=>"Aruba", :AX=>"Åland", :AZ=>"Azerbaijan", :BA=>"Bosnia and Herzegovina", :BB=>"Barbados", :BD=>"Bangladesh", :BE=>"Belgium", :BF=>"Burkina Faso", :BG=>"Bulgaria", :BH=>"Bahrain", :BI=>"Burundi", :BJ=>"Benin", :BL=>"Saint-Barthélemy", :BM=>"Bermuda", :BN=>"Brunei", :BO=>"Bolivia", :BQ=>"Bonaire", :BR=>"Brazil", :BS=>"Bahamas", :BT=>"Bhutan", :BW=>"Botswana", :BY=>"Belarus", :BZ=>"Belize", :CA=>"Canada", :CC=>"Cocos [Keeling] Islands", :CD=>"Congo", :CF=>"Central African Republic", :CG=>"Republic of the Congo"}
+# => {:AD=>"Andorra", :AE=>"United Arab Emirates", :AF=>"Afghanistan", :AG=>"Antigua and Barbuda", :AI=>"Anguilla", :AL=>"Albania", :AM=>"Armenia", :AO=>"Angola", :AQ=>"Antarctica", :AR=>"Argentina", :AS=>"American Samoa", :AT=>"Austria", :AU=>"Australia", :AW=>"Aruba", :AX=>"Åland", :AZ=>"Azerbaijanndi", :BJ=>"Benin", :BL=>"Saint-Barthélemy", :BM=>"Bermuda", :BN=>"Brunei", :BO=>"Bolivia", :BQ=>"Bonaire", :BR=>"Brazil", :BS=>"Bahamas", :BT=>"BhutaCOUNTRY_ISO_CODE=>"country_name", :CR=>"Costa Rica", :CU=>"Cuba", :CV=>"Cape Verde", :CW=>"Curaçao", :CX=>"Christmas Island", :CY=>"Cyprus", :CZ=>"Czech Republic", :DE=>"Germany", :DJ=>"Djibouti", :DK=>"Denmark", :DM=>"Dominica", :DO=>"Dominican Republic", :DZ=>"Algeria", :EC=>"Ecuador", :EE=>"Estonia", :EG=>"Egypt", :ER=>"Eritrea", :ES=>"Spain", :ET=>"Ethiopia", :FI=>"Finland", :FJ=>"Fiji", :FK=>"Falkland Islands", :FM=>"Federated States of Micronesia", :FO=>"Faroe Islands", :FR=>"France", :GA=>"Gabon", :GB=>"United Kingdom", :GD=>"Grenada", :GE=>"Georgia", :GF=>"French Guiana", :GG=>"GuernseOcean Territory", :IQ=>"Iraq", :IR=>"Iran", :IS=>"Iceland", :IT=>"Italy", :JE=>"Jersey", :JM=>"Jamaica", :JO=>"Hashemite Kingdom of Jordan", :JP=>"Japic of Korea", :KW=>"Kuwait", :KY=>"Cayman Islands", :KZ=>"Kazakhstan", :LA=>"Laos", :LB=>"Lebanon", :LC=>"Saint Lucia", :LI=>"Liechtenstein", :LK=>"Sri Lanka", :LR=>"Liberia", :LS=>"Lesotho", :LT=>"Republic of Lithuania", :LU=>"Luxembourg", :LV=>"Latvia", :LY=>"Libya", :MA=>"Morocco", :MC=>"Monaco", :MD=>"Republic of Moldova", :ME=>"Montenegro", :MF=>"Saint Martin", :MG=>"Madagascar", :MH=>"Marshall Islands", :MK=>"Macedonia", :ML=>"Mali", :MM=>"ger", :NF=>"Norfolk Island", :NG=>"Nigeria", :NI=>"Nicaragua", :NL=>"Netherlands", :NO=>"Norway", :NP=>"Nepal", :NR=>"Nauru", :NU=>"Niue", :NZ=>"New Zealand", :OM=>"Oman", :PA=>"Panama", :PE=>"Peru", :PF=>"French Polynesia", :PG=>"Papua New Guinea", :PH=>"Philippines", :PK=>"Pakistan", :PL=>"Poland", :PM=>"Saint Pierre and Miquelon", :PN=>"Pitcairn Islands", :PR=>"Puerto Rico", :PS=>"Palestine", :PT=>"Portugal", :PW=>"Palau", :PY=>"Paraguay", :QA=>"Qatar", :RE=>"Réunion", :RO=>"Romania", :RS=>"Serbia", :RU=>"Russia", :RW=>"Rwanda", :SA=>"Saudi Arabia", :SB=>"Solomon Islands", :SC=>"Seychelles", :SD=>"Sudan", :SE=>"Sweden", :SG=>"Singapore", :SH=>"Saint Helena", :SI=>"Slovenia", :SJ=>"Svalbard and Jan Mayen", :SK=>"Slovakia", :SL=>"Sierra Leone", :SM=>"San Marino", :SN=>"Senegal", :SO=>"Somalia", :SR=>"Suriname", :SS=>"South Sudan", :ST=>"São Tomé and Príncipe", :SV=>"El Salvador", :SX=>"Sint Maarten", :SY=>"Syria", :SZ=>"Swaziland", :TC=>"Turks and Caicos Islands", :TD=>"Chad", :TF=>"French Southern Territories", :TG=>"Togo", :TH=>"Thailand", :TJ=>"Tajikistan", :TK=>"Tokelau", :TL=>"East Timor", :TM=>"Turkmenistan", :TN=>"Tunisia", :TO=>"Tonga", :TR=>"Turkey", :TT=>"Trinidad and Tobago", :TV=>"Tuvalu", :TW=>"Taiwan", :TZ=>"Tanzania", :UA=>"Ukraine", :UG=>"Uganda", :UM=>"U.S. Minor Outlying Islands", :US=>"United States", :UY=>"Uruguay", :UZ=>"Uzbekistan", :VA=>"Vatican City", :VC=>"Saint Vincent and the Grenadines", :VE=>"Venezuela", :VG=>"British Virgin Islands", :VI=>"U.S. Virgin Islands", :VN=>"Vietnam", :VU=>"Vanuatu", :WF=>"Wallis and Futuna", :WS=>"Samoa", :XK=>"Kosovo", :YE=>"Yemen", :YT=>"Mayotte", :ZA=>"South Africa", :ZM=>"Zambia", :ZW=>"Zimbabwe"}
 ```
 
-## Simplified syntax with *get* method:
-* _CS.get_: list of countries (equivalent to `CS.countries`)
-* _CS.get(country)_: list of states (equivalent to `CS.states(country)`)
-* _CS.get(country, state)_: list of cities (equivalent to `CS.cities(state, country)`)
-
-Example:
 ```ruby
-CS.get
-# => {:AD=>"Andorra", :AE=>"United Arab Emirates", :AF=>"Afghanistan", :AG=>"Antigua and Barbuda", :AI=>"Anguilla", :AL=>"Albania", :AM=>"Armenia", :AO=>"Angola", :AQ=>"Antarctica", :AR=>"Argentina", :AS=>"American Samoa", :AT=>"Austria", :AU=>"Australia", :AW=>"Aruba", :AX=>"Åland", :AZ=>"Azerbaijan", :BA=>"Bosnia and Herzegovina", :BB=>"Barbados", :BD=>"Bangladesh", :BE=>"Belgium", :BF=>"Burkina Faso", :BG=>"Bulgaria", :BH=>"Bahrain", :BI=>"Burundi", :BJ=>"Benin", :BL=>"Saint-Barthélemy", :BM=>"Bermuda", :BN=>"Brunei", :BO=>"Bolivia", :BQ=>"Bonaire", :BR=>"Brazil", :BS=>"Bahamas", :BT=>"Bhutan", :BW=>"Botswana", :BY=>"Belarus", :BZ=>"Belize", :CA=>"Canada", :CC=>"Cocos [Keeling] Islands", :CD=>"Congo", :CF=>"Central African Republic", :CG=>"Republic of the Congo"}
+CS.states(:IN)
+# => {:AN=>"Andaman and Nicobar", :AP=>"Andhra Pradesh", :AR=>"Arunachal Pradesh", :AS=>"Assam", :BR=>"Bihar", :CH=>"Chandigarh", :CT=>"Chhattisgarh", :DD=>"Daman and Diu", :DL=>"National Capital Territory of Delhi", :DN=>"Dadra and Nagar Haveli", :GA=>"Goa", :GJ=>"Gujarat", :HP=>"Himachal Pradesh", :HR=>"Haryana", :JH=>"Jharkhand", :JK=>"Jammu and Kashmir", :KA=>"Karnataka", :KL=>"Kerala", :LA=>"Ladakh", :LD=>"Lakshadweep", :MH=>"Maharashtra", :ML=>"Meghalaya", :MN=>"Manipur", :MP=>"Madhya Pradesh", :MZ=>"Mizoram", :NL=>"Nagaland", :OR=>"Odisha", :PB=>"Punjab", :PY=>"Union Territory of Puducherry", :RJ=>"Rajasthan", :SK=>"Sikkim", :TG=>"Telangana", :TN=>"Tamil Nadu", :TR=>"Tripura", :UP=>"Uttar Pradesh", :UT=>"Uttarakhand", :WB=>"West Bengal"} 
 ```
+
 ```ruby
-CS.get :us
-# => {:AK=>"Alaska", :AL=>"Alabama", :AR=>"Arkansas", :AZ=>"Arizona", :CA=>"California", :CO=>"Colorado", :CT=>"Connecticut", :DC=>"District of Columbia", :DE=>"Delaware", :FL=>"Florida", :GA=>"Georgia", :HI=>"Hawaii", :IA=>"Iowa", :ID=>"Idaho", :IL=>"Illinois", :IN=>"Indiana", :KS=>"Kansas", :KY=>"Kentucky", :LA=>"Louisiana", :MA=>"Massachusetts", :MD=>"Maryland", :ME=>"Maine", :MI=>"Michigan", :MN=>"Minnesota", :MO=>"Missouri", :MS=>"Mississippi", :MT=>"Montana", :NC=>"North Carolina", :ND=>"North Dakota", :NE=>"Nebraska", :NH=>"New Hampshire", :NJ=>"New Jersey", :NM=>"New Mexico", :NV=>"Nevada", :NY=>"New York", :OH=>"Ohio", :OK=>"Oklahoma", :OR=>"Oregon", :PA=>"Pennsylvania", :RI=>"Rhode Island", :SC=>"South Carolina", :SD=>"South Dakota", :TN=>"Tennessee", :TX=>"Texas", :UT=>"Utah", :VA=>"Virginia", :VT=>"Vermont", :WA=>"Washington", :WI=>"Wisconsin", :WV=>"West Virginia", :WY=>"Wyoming"}
-```
-```ruby
-CS.get :us, :ak
-# => ["Adak", "Akhiok", "Akiachak", "Akiak", "Akutan", "Alakanuk", "Ambler", "Anchor Point", "Anchorage", "Angoon", "Atqasuk", "Barrow", "Bell Island Hot Springs", "Bethel", "Big Lake", "Buckland", "Chefornak", "Chevak", "Chicken", "Chugiak", "Coffman Cove", "Cooper Landing", "Copper Center", "Cordova", "Craig", "Deltana", "Dillingham", "Douglas", "Dutch Harbor", "Eagle River", "Eielson Air Force Base", "Fairbanks", "Fairbanks North Star Borough", "Fort Greely", "Fort Richardson", "Galena", "Girdwood", "Goodnews Bay", "Haines", "Homer", "Hooper Bay", "Juneau", "Kake", "Kaktovik", "Kalskag", "Kenai", "Ketchikan", "Kiana", "King Cove", "King Salmon", "Kipnuk", "Klawock", "Kodiak", "Kongiganak", "Kotlik", "Koyuk", "Kwethluk", "Levelock", "Manokotak", "May Creek", "Mekoryuk", "Metlakatla", "Mountain Village", "Nabesna", "Naknek", "Nazan Village", "Nenana", "New Stuyahok", "Nikiski", "Ninilchik", "Noatak", "Nome", "Nondalton", "Noorvik", "North Pole", "Northway", "Old Kotzebue", "Palmer", "Pedro Bay", "Petersburg", "Pilot Station", "Point Hope", "Point Lay", "Prudhoe Bay", "Russian Mission", "Sand Point", "Scammon Bay", "Selawik", "Seward", "Shungnak", "Sitka", "Skaguay", "Soldotna", "Stebbins", "Sterling", "Sutton", "Talkeetna", "Teller", "Thorne Bay", "Togiak", "Tok", "Toksook Bay", "Tuntutuliak", "Two Rivers", "Unalakleet", "Unalaska", "Valdez", "Wainwright", "Wasilla"]
+CS.cities(:UT, :IN)
+# => ["Almora", "Amsaur", "Araghar", "Bageshwar", "Bagoli", "Bazpur", "Belra", "Bhagwanpur", "Champawat", "Dehradun", "Dwarahat", "Gadarpur", "Garur", "Haldwani", "Haridwar", "Jaspur", "Jhabrera", "Kashipur", "Khatima", "Kichha", "Kotdwara", "Lalkua", "Mussoorie", "Nainital", "Pali", "Pantnagar", "Pauri", "Pithoragarh", "Ranikhet", "Rishikesh", "Roorkee", "Rudarpur", "Rudraprayag", "Sitarganj", "Srinagar", "Tanakpur", "Tehri", "Uttarkashi"] 
 ```
 
-# Missing cities and wrong names
-To add missing cities or to rename wrong ones, create these files in your project folder:
-`db/cities-lookup.yml` and `db/states-lookup.yml` and `db/countries-lookup.yml`:
-
-1) Renaming a country - `US` to `America`:
-```yaml
-# db/countries-lookup.yml
-US: "America"
-```
-
-2) Renaming a state - `California` to `Something Else`:
-```yaml
-# db/states-lookup.yml
-US:
-  CA: Something Else
-```
-
-3) Renaming a city:
-```yaml
-# db/cities-lookup.yml
-US:
-  CA:
-    "Burbank": "Bur Bank"
-```
-
-4) Adding a missing city:
-```yaml
-# db/cities-lookup.yml
-US:
-  CA:
-    "My Town": "My Town"
-```
-
-5) Suppressing a city (set it as a blank line):
-```yaml
-# db/cities-lookup.yml
-US:
-  CA:
-    "Burbank": ""
-```
-
-To use a different file instead of `db\cities-lookup.yml`:
-```ruby
-CS.set_cities_lookup_file('new-city-names.yml')
-CS.set_states_lookup_file('new-state-names.yml')
-CS.set_countries_lookup_file('new-country-names.yml')
-```
-
-# Update the database from MaxMind
-MaxMind update their databases weekly on Tuesdays.
-
-Since Dec 30, 2019, MaxMind requires a license key (for free) to get download updates.
-
-To get the license key:
-1. Sign up for a MaxMind account: https://www.maxmind.com/en/geolite2/signup
-2. Create a license key: https://www.maxmind.com/en/accounts/current/license-key
-
-To update:
-```ruby
-CS.set_license_key('MY_KEY')
-CS.update
-```
-_*PS:* Replace "_MY_KEY_" with your actual key._
-
-## Manually setting a database file:
-You can use an alternative database file instead of downloading from MaxMind servers:
-```ruby
-CS.set_maxmind_zip_url('/home/daniel/GeoLite2-City-CSV_20200324.zip')
-CS.update
-```
-or
-```ruby
-CS.set_maxmind_zip_url('https://example.com/GeoLite2-City-CSV_20200324.zip')
-CS.update
-```
-
-The file has to be a ZIP file. And it has contains a CVS file named `GeoLite2-City-Locations-en.csv`. This file must be in the MaxMind's GeoLite2 City's format.
-
-# Other countries:
-
-When getting a city list, you can also specifies the country:
-```ruby
-CS.cities(:sp, :br)
-```
-
-The country is an optional argument. **city-state** always uses the last country that you used.
-```ruby
-CS.states(:br)
-# => {:AC=>"Acre", :AL=>"Alagoas", :AM=>"Amazonas", :AP=>"Amapa", :BA=>"Bahia", :CE=>"Ceara", :DF=>"Federal District", :ES=>"Espirito Santo", :GO=>"Goias", :MA=>"Maranhao", :MG=>"Minas Gerais", :MS=>"Mato Grosso do Sul", :MT=>"Mato Grosso", :PA=>"Para", :PB=>"Paraiba", :PE=>"Pernambuco", :PI=>"Piaui", :PR=>"Parana", :RJ=>"Rio de Janeiro", :RN=>"Rio Grande do Norte", :RO=>"Rondonia", :RR=>"Roraima", :RS=>"Rio Grande do Sul", :SC=>"Santa Catarina", :SE=>"Sergipe", :SP=>"Sao Paulo", :TO=>"Tocantins"}
-CS.cities(:to)
-# => ["Aparecida do Rio Negro", "Araguaína", "Brejinho de Nazare", "Gurupi", "Itaguatins", "Miracema do Tocantins", "Monte Alegre", "Palmas", "Paraiso do Tocantins", "Parana", "Pedro Afonso", "Porto Nacional", "Presidente Kennedy", "Salvador", "Santo Antonio", "Sao Domingos", "Taguatinga", "Tucum"]
-```
+### More details about this city-state gem (Original Author)
+https://github.com/loureirorg/city-state
 
 # Changelog
 * 0.1.0:
-  - [Minor] Added `set_license_key(license_key)` and `set_maxmind_zip_url(url)` methods;
-  - [Minor] Removed Rails code, so it can be used on pure Ruby;
-  - [Minor] Allow to rename and to add missing cities;
-  - [Minor] Updated default MaxMind database;
-  - [Fix] Filter duplicated elements (ex. `CS.cities(:ca, :us)` was returning `Burbank` twice);
-  - [Fix] Upgraded dependencies (some had security issues);
-  - [Fix] Calling `CS.cities(nil)` was returning random values;
+  - [Minor] Added cities with no states for a country
+  - [Minor] Can change cities name with empty states
 
-# More details about this gem
-https://learnwithdaniel.com/2015/02/citystate-list-of-countries-cities-and-states-ruby/
 
 # CityState License
-**city-state** is a open source project by Daniel Loureiro with a MIT license. Also, it uses MaxMind open source database.
+**cs** is a tweak to the **city-state project by Daniel Loureiro** with a MIT license. Also, it uses MaxMind open source database.
 
 # MaxMind License
 Database and Contents Copyright (c) 2020 MaxMind, Inc.
